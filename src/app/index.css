@@ -1,0 +1,128 @@
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.thumbnail {
+    height: 200px;
+}
+
+.thumbnail img.pull-right {
+    width: 50px;
+}
+
+.home-slide {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../assets/images/rideau.jpg);
+}
+.home-slide .jumbotron {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.fade.ng-enter {
+    transition: 0.5s linear all;
+    transform:translateY(-100px);
+    opacity: 0;
+}
+
+.fade.ng-enter.ng-enter-active {
+    transform:translateY(0);
+    opacity: 1;
+}
+
+.cat-slide {
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #E5E5E5;
+}
+
+.slide-title {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.slide-title h1 {
+    margin-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.boutonVote {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: 2px solid #fff;
+    border-radius: 100%!important;
+    font-size: 40px;
+    color: #fff;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+.btn-circle-up {
+    padding: 0px 16px 0px 16px;
+}
+.btn-circle-down {
+    padding: 7px 16px;
+}
+
+.btn-circle-small {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: 2px solid #fff;
+    border-radius: 100%!important;
+    font-size: 25px;
+    color: #fff;
+    background: 0 0;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+.btn-circle-small-up {
+    padding: 0px 8px 10px 8px;
+}
+.btn-circle-small-down {
+    padding: 3px 8px 5px 8px;
+}
+
+.btn-circle:hover,
+.btn-circle:focus,
+.btn-circle-small:hover,
+.btn-circle-small:focus {
+    outline: 0;
+    color: #fff;
+    background: rgba(255,255,255,.1);
+}
+
+.btn-circle i.animated, .btn-circle-small i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+
+.btn-circle:hover i.animated, .btn-circle-small i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
