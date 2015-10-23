@@ -1,0 +1,65 @@
+.homepage {
+    background-image: url(../../assets/images/rideau.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-block {
+
+}
+
+.main-title {
+    font-size: 7em;
+    color: white;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-duration: 1s;
+    -moz-animation-delay: 0s;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+.intro-border {
+    border-top: solid 2px white;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 1.15s;
+    -moz-animation-duration: 1s;
+    -moz-animation-delay: 1.15s;
+    animation-duration: 1s;
+    animation-delay: 1.15s;
+}
+
+.intro {
+    color: lightgrey;
+    padding-top: 2em;
+    margin-bottom: 4em;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-duration: 2s;
+    -moz-animation-delay: 2s;
+    animation-duration: 2s;
+    animation-delay: 2s;
+}
+
+.enter-button {
+    font-size: 2em;
+    border: solid 1px white;
+    color: white;
+    padding: 0.4em 0.7em;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 3.5s;
+    -moz-animation-duration: 1s;
+    -moz-animation-delay: 3.5s;
+    animation-duration: 1s;
+    animation-delay: 3.5s;
+}

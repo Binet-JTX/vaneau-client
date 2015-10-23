@@ -1,79 +1,15 @@
-<ss:slide class="home-slide">
-    <div class="jumbotron" id="homeslide">
-        <div class="container">
-            <h1>Vaneaux d'or</h1>
-            <p>Bienvenue sur le site de vote pour la cérémonie des Vaneaux d'Or, édition 2015 !</p>
-            <p>La cérémonie aura lieu durant la <strong>Proj' de Passation du 12 novembre 2015</strong>, en amphi Poincaré.</p>
-            <p>Pour chaque catégorie, quatre clips ont été nominés. Vote pour celui que tu préfères !</p>
-            <p>Tu ne peux voter que pour un clip par catégorie, mais ce choix n'est pas définitif : tu peux l'annuler et choisir un autre clip.</p>
-            <p ng-show="!main.loggedIn">Avant de pouvoir voter, clique sur le bouton "Connexion" (Frankiz).</p>
-            <p><a ng-href="{{ main.frankiz_url }}" class="btn btn-default btn-lg" ng-show="!main.loggedIn">Connexion</a>
-            <a ng-click="main.logout()" class="btn btn-default btn-lg" ng-show="main.loggedIn">Déconnexion</a></p>
+<div class="homepage">
+    <div class="home-block">
+        <div class="main-title animated fadeInDown">Vaneaux d'or</div>
+        <div class="animated zoomIn intro-border"></div>
+        <div class="intro animated fadeInDown">
+            <p class="lead">La cérémonie aura lieu durant la <strong>Proj' de Passation du 12 novembre 2015</strong>, en amphi Poincaré.</p>
+            <p class="lead">Pour la première fois, cette année, c'est ton vote qui détermine le clip gagnant de chaque catégorie !</p>
         </div>
-    </div>
-    <div class="text-center">
-        <a href="" ng-click="main.scrollToCategory(0)" class="btn btn-circle page-scroll">
-            <i class="fa fa-angle-double-down animated"></i>
-        </a>
-    </div>
-</ss:slide>
-
-<ss:slide class="cat-slide" ng-style="{'background-image': main.background(cat)}" ng-repeat="cat in main.categories">
-    <div id="category-{{$index}}" class="slide-title container-fluid">
-        <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 col-xs-12">
-                <h1>{{ cat.name }}</h1>
-                <div ng-if="!main.isLoggedIn()">
-                    <p>
-                        Pour voter, il faut d'abord ce connecter.
-                    </p>
-                    <p>
-                        <a ng-href="{{ main.frankiz_url }}" class="btn btn-default" ng-show="!main.loggedIn">Connexion</a>
-                    </p>
-                </div>
-                <div ng-if="main.isLoggedIn() && main.student.aDejaVote(cat.id)">
-                    <p>
-                        Tu as déjà voté pour cette catégorie. <br/>
-                        Ton vote est : <strong>{{ main.student.voted(cat.id).name }}</strong>
-                    </p>
-                    <p>
-                        <a class="btn btn-default btn-sm boutonUnvote" type="button" href="" ng-click="main.removeVote(cat.id)">Supprimer mon vote</a>
-                    </p>
-                </div>
-            </div>
-            <div class="col-sm-1 hidden-xs text-right">
-                <a href="" ng-click="main.scrollToCategory($index - 1)" class="btn btn-circle-small btn-circle-small-up page-scroll">
-                    <i class="fa fa-angle-double-up animated"></i>
-                </a><br />
-                <a href="" ng-click="main.scrollToCategory($index + 1)" class="btn btn-circle-small btn-circle-small-down page-scroll">
-                    <i class="fa fa-angle-double-down animated"></i>
-                </a>
+        <div class="text-center">
+            <div class="enter-button animated flipInX" ui-sref="vote.home">
+                Découvrir les nominés
             </div>
         </div>
     </div>
-
-    <br /><br />
-
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 col-xs-12" ng-repeat="video in cat.videos">
-                <div class="row">
-                    <div class="col-sm-8 col-xs-12 text-center" style="margin-bottom: 20px;">
-                        <video width="80%" controls>
-                            <source ng-src="{{ 'assets/videos/' + video.filename + '.mp4' }}" />
-                            <source ng-src="{{ 'assets/videos/' + video.filename + '.webm' }}" />
-                            Ici la description alternative
-                        </video>
-                    </div>
-                    <div class="col-sm-4 col-xs-12" style="margin-bottom: 20px;">
-                        <h4 style="text-shadow: 2px 2px #000000;">{{ video.name }}</h4>
-                        <a class="btn btn-default boutonVote" ng-show="main.isLoggedIn() && !main.student.aDejaVote(cat.id)" type="button" href="" ng-click="main.addVote(cat.id, video.id)">
-                            Voter pour cette video
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</ss:slide>
+</div>

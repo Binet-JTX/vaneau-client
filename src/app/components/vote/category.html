@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row category-header">
+        <div class="col-sm-12 text-center">
+            <span class="header-title">{{ vote.category.name }}</span>
+            <div ng-if="voteLo.loggedIn && voteLo.student.aDejaVote(vote.category.id)">
+                <p class="lead light-font">
+                    Tu as déjà voté pour cette catégorie. Ton vote est : <strong>{{ voteLo.student.voted(vote.category.id).name }}</strong> (<a href ng-click="vote.removeVote(vote.category.id, voteLo.student.id)">supprimer mon vote</a>)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" ng-repeat="video in vote.category.videos">
+            <div class="row video-item">
+                <div class="col-sm-8 col-xs-12 text-center">
+                    <video width="100%" controls poster="{{ 'assets/posters/' + video.filename + '.jpg' }}">
+                        <source ng-src="{{ 'assets/videos/' + video.filename + '.mp4' }}" />
+                        <source ng-src="{{ 'assets/videos/' + video.filename + '.webm' }}" />
+                        Ici la description alternative
+                    </video>
+                </div>
+                <div class="col-sm-4 col-xs-12 text-center">
+                    <div class="video-item-descriptor">
+                        <div class="video-item-descriptor-heading">{{ video.name }}</div>
+                        <div class="video-item-descriptor-description" ng-if="video.description"><p>{{ video.description }}</p></div>
+                        <div class="video-item-descriptor-button" ng-show="voteLo.loggedIn && !voteLo.student.aDejaVote(vote.category.id)" ng-click="vote.addVote(vote.category.id, video.id, voteLo.student.id)">
+                            Voter pour cette video
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

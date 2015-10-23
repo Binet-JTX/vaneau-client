@@ -1,0 +1,24 @@
+<div class="container-fluid category-layout" ng-style="{'background-image': voteLo.background()}">
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4 category-menu">
+            <div class="text-center" style="margin-top: 1em;">
+                <span class="header-title">Vaneaux d'Or</span>
+            </div>
+            <div class="text-center">
+                <p ng-show="!voteLo.loggedIn">
+                    <a ng-href="{{ voteLo.frankiz_url }}" class="text-uppercase"><strong>Connexion</strong></a>
+                </p>
+                <p ng-show="voteLo.loggedIn">
+                    <a href="" ng-click="voteLo.logout()" class="text-uppercase"><strong>Déconnexion</strong></a>
+                </p>
+            </div>
+            
+            <ul class="category-list">
+                <li ng-repeat="cat in voteLo.categories" ui-sref-active="active" class="category-item">
+                    <span ui-sref="vote.category({id: cat.id})">{{ cat.name }}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-10 col-md-9 col-sm-8 category-view" ui-view=""></div>
+    </div>
+</div>

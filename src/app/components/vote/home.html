@@ -1,0 +1,19 @@
+<div class="row category-header">
+    <div class="col-sm-12 text-center">
+        <span class="header-title">Catégories</span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="cat in voteLo.categories">
+        <div class="text-center category-thumbnail" ng-style="{'background-image': 'url(assets/images/' + cat.background + ')'}" ui-sref="vote.category({id: cat.id})">
+            <div class="category-wrapper">
+                <div class="category-title">
+                {{ cat.name }}<br />
+                <span ng-if="voteLo.student.aDejaVote(cat.id)" class="category-vote">
+                    (ton choix&nbsp;: &laquo;&nbsp;{{ voteLo.student.voted(cat.id).name }}&nbsp;&raquo;)
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

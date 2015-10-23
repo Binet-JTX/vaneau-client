@@ -13,8 +13,8 @@
         'ui.bootstrap', 
 
         'js-data',
-        'frSlidescroll',
-        'ngStorage'
+        'ngStorage',
+        'vaneau.vote'
     ]);
 
 })();
