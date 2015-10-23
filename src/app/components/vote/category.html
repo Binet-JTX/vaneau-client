@@ -14,10 +14,10 @@
         <div class="col-sm-12" ng-repeat="video in vote.category.videos">
             <div class="row video-item">
                 <div class="col-sm-8 col-xs-12 text-center">
-                    <video width="100%" controls><!-- TODO poster="{{ 'assets/posters/' + video.filename + '.jpg' }}" -->
+                    <video width="100%" preload="none" controls poster="assets/images/rideau.jpg">
                         <source ng-src="{{ 'assets/videos/' + video.filename + '.mp4' }}" />
                         <source ng-src="{{ 'assets/videos/' + video.filename + '.webm' }}" />
-                        Ici la description alternative
+                        Ton navigateur ne supporte pas le HTML5, tu ne peux pas voir les vidéos...
                     </video>
                 </div>
                 <div class="col-sm-4 col-xs-12 text-center">

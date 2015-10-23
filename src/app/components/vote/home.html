@@ -4,7 +4,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="cat in voteLo.categories">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="cat in voteLo.categories | orderBy:'rank'">
         <div class="text-center category-thumbnail" ng-style="{'background-image': 'url(assets/images/' + cat.background + ')'}" ui-sref="vote.category({id: cat.id})">
             <div class="category-wrapper">
                 <div class="category-title">

@@ -43,7 +43,7 @@
             delete $localStorage.fkz_suffix;
             DS.ejectAll('student');
             vm.loggedIn = false;
-            $window.location.href = 'http://jtx/vaneau';
+            $window.location.href = 'http://localhost:3000/';
         };
 
         Category.findAll().then(function(categories) {
@@ -64,10 +64,10 @@
     }
 
     /** @ngInject */
-    function VoteCategoryController(Student, Category, Video, Vote, category, $window, $rootScope, $log) {
+    function VoteCategoryController(Student, Category, Video, Vote, category, $localStorage, $window, $rootScope, $log) {
         var vm = this;
 
-        var get_params = $window.location.search;
+        var get_params = $localStorage.fkz_suffix;
 
         vm.category = category;
 

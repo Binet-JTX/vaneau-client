@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-2 col-md-3 col-sm-4 category-menu">
             <div class="text-center" style="margin-top: 1em;">
-                <span class="header-title">Vaneaux d'Or</span>
+                <span class="header-title" ui-sref="vote.home">Vaneaux d'Or</span>
             </div>
             <div class="text-center">
                 <p ng-show="!voteLo.loggedIn">
@@ -14,7 +14,7 @@
             </div>
             
             <ul class="category-list">
-                <li ng-repeat="cat in voteLo.categories" ui-sref-active="active" class="category-item">
+                <li ng-repeat="cat in voteLo.categories | orderBy:'rank'" ui-sref-active="active" class="category-item">
                     <span ui-sref="vote.category({id: cat.id})">{{ cat.name }}</span>
                 </li>
             </ul>

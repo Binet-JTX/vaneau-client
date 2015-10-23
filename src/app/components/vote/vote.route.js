@@ -16,7 +16,7 @@
                 abstract: true
             })
                 .state('vote.home', {
-                    url: '/home',
+                    url: '/',
                     templateUrl: 'app/components/vote/home.html',
                     controller: 'VoteHomeController',
                     controllerAs: 'voteHm'
