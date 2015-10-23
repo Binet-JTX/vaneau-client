@@ -20,7 +20,7 @@
 .home-slide {
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url(../assets/images/rideau.jpg);
+    background-image: url(assets/images/rideau.jpg);
 }
 .home-slide .jumbotron {
     background-color: rgba(255, 255, 255, 0.8);

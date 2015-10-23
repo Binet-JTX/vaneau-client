@@ -6,14 +6,10 @@
         .controller('MainController', MainController);
 
     /** @ngInject */
-    function MainController(DS, Student, $location, $localStorage, $window, $log) {
+    function MainController(DS, Student, $location, $localStorage, $window, $state, $log) {
         var vm = this;
 
         // Authentification
-        Student.frankiz_url({bypassCache: true}).then(function(l) {
-            vm.frankiz_url = l.data;
-        });
-
         vm.loggedIn = false;
         vm.isLoggedIn = function() {
             return vm.loggedIn;
@@ -23,7 +19,7 @@
         if (get_params != "") {
             $localStorage.fkz_suffix = get_params;
         }
-
+        
         if (angular.isDefined($localStorage.fkz_suffix)) {
             Student.frankiz_auth_check({suffix: $localStorage.fkz_suffix, bypassCache: true}).then(function(response) {
                 if (response.data.valid) {
@@ -34,11 +30,16 @@
                         $log.debug(s.votes);
                     });
                     vm.loggedIn = true;
+                    $state.go('vote.home');
                 }
             });
         } else {
             DS.ejectAll('student');
         }
+
+        Student.frankiz_url({bypassCache: true}).then(function(l) {
+            vm.frankiz_url = l.data;
+        });
 
         vm.logout = function() {
             delete $localStorage.fkz_suffix;

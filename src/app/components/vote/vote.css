@@ -54,6 +54,8 @@ h1 {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 .category-title {
     font-size: 1.7em;
@@ -67,7 +69,8 @@ h1 {
 
 .category-view {
     height: 100vh;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .category-header {

@@ -14,7 +14,7 @@
         <div class="col-sm-12" ng-repeat="video in vote.category.videos">
             <div class="row video-item">
                 <div class="col-sm-8 col-xs-12 text-center">
-                    <video width="100%" controls poster="{{ 'assets/posters/' + video.filename + '.jpg' }}">
+                    <video width="100%" controls><!-- TODO poster="{{ 'assets/posters/' + video.filename + '.jpg' }}" -->
                         <source ng-src="{{ 'assets/videos/' + video.filename + '.mp4' }}" />
                         <source ng-src="{{ 'assets/videos/' + video.filename + '.webm' }}" />
                         Ici la description alternative

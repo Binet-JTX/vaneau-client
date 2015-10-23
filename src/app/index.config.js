@@ -8,7 +8,7 @@
     /** @ngInject */
     function config($logProvider, DSProvider, DSHttpAdapterProvider) {
         // Enable log
-        var DEBUG = true;
+        var DEBUG = false;
         $logProvider.debugEnabled(DEBUG);
 
         angular.extend(DSProvider.defaults, {
