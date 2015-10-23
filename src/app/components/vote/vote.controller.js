@@ -64,7 +64,7 @@
     }
 
     /** @ngInject */
-    function VoteCategoryController(Category, Video, Vote, category, $window, $rootScope, $log) {
+    function VoteCategoryController(Student, Category, Video, Vote, category, $window, $rootScope, $log) {
         var vm = this;
 
         var get_params = $window.location.search;

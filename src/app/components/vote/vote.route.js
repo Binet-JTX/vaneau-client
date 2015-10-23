@@ -27,7 +27,7 @@
                     controller: 'VoteCategoryController',
                     controllerAs: 'vote',
                     resolve: {
-                        category: function(Category, Video, Vote, $stateParams) {
+                        category: function(Student, Category, Video, Vote, $stateParams) {
                             return Category.find($stateParams.id);
                         }
                     }

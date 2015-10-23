@@ -9,16 +9,15 @@
     function config($logProvider, DSProvider, DSHttpAdapterProvider) {
         // Enable log
         var DEBUG = false;
-        $logProvider.debugEnabled(DEBUG);
+        $logProvider.debugEnabled(true);
 
         angular.extend(DSProvider.defaults, {
-            debug: DEBUG
+            debug: true
         });
         if (!DEBUG) {
             angular.extend(DSHttpAdapterProvider.defaults, {
                 basePath: 'http://jtx/vaneau/api',
-                forceTrailingSlash: true,
-                log: false
+                forceTrailingSlash: true
             });
         } else {
             angular.extend(DSHttpAdapterProvider.defaults, {
