@@ -13,13 +13,24 @@
                 templateUrl: 'app/components/vote/layout.html',
                 controller: 'VoteLayoutController',
                 controllerAs: 'voteLo',
-                abstract: true
+                abstract: true,
+                resolve: {
+                    categories: function(Student, Category, Video, Vote) {
+                        return Category.findAll();
+                    }
+                }
             })
                 .state('vote.home', {
                     url: '/',
                     templateUrl: 'app/components/vote/home.html',
                     controller: 'VoteHomeController',
                     controllerAs: 'voteHm'
+                })
+                .state('vote.results', {
+                    url: '/results',
+                    templateUrl: 'app/components/vote/results.html',
+                    controller: 'VoteResultsController',
+                    controllerAs: 'voteRes'
                 })
                 .state('vote.category', {
                     url: '/:id',

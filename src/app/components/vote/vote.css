@@ -6,6 +6,10 @@ h1 {
     color: lightgrey;
 }
 
+.bold {
+    font-weight: 600;
+}
+
 .category-layout {
     min-height: 100vh;
     background-position: center;
@@ -119,4 +123,11 @@ h1 {
     color: lightgrey;
     text-transform: uppercase;
     font-size: 1.1em;
+}
+
+.result-row {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: lightgrey;
+    font-size: 1.4em;
+    margin-bottom: 4px;
 }

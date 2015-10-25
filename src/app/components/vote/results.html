@@ -1,0 +1,23 @@
+<div class="row category-header">
+    <div class="col-sm-12 text-center">
+        <span class="header-title">Résultats</span>
+    </div>
+</div>
+<div class="row" ng-repeat="cat in voteRes.categories | orderBy:'rank'">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="text-center category-thumbnail" ng-style="{'background-image': 'url(assets/images/' + cat.background + ')'}" ui-sref="vote.category({id: cat.id})">
+            <div class="category-wrapper">
+                <div class="category-title">
+                    {{ cat.name }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6 col-xs-12">
+        <div ng-repeat="v in cat.videos | orderBy:'total':true" class="result-row">
+            <span ng-class="$index == 0 && 'bold' || ''">
+                #{{ $index +1 }} &mdash; {{ v.name }} ({{ v.total }} vote{{ v.total > 1 && 's' || '' }})
+            </span>
+        </div>
+    </div>
+</div>

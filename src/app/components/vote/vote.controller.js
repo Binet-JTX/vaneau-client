@@ -5,10 +5,11 @@
         .module('vaneau.vote')
         .controller('VoteLayoutController', VoteLayoutController)
         .controller('VoteHomeController', VoteHomeController)
-        .controller('VoteCategoryController', VoteCategoryController);
+        .controller('VoteCategoryController', VoteCategoryController)
+        .controller('VoteResultsController', VoteResultsController);
 
     /** @ngInject */
-    function VoteLayoutController(DS, Student, Category, Video, Vote, $localStorage, $window, $rootScope, $log) {
+    function VoteLayoutController(DS, Student, Category, Video, Vote, categories, $localStorage, $window, $state, $rootScope, $log) {
         var vm = this;
 
         // Authentification
@@ -46,14 +47,16 @@
             $window.location.href = 'http://localhost:3000/';
         };
 
-        Category.findAll().then(function(categories) {
-            vm.categories = categories;
-        });
+        vm.categories = categories;
 
         $rootScope.design = { image: 'rideau.jpg' };
 
         vm.background = function() {
-            return "url(assets/images/" + $rootScope.design.image + ")";
+            if ($state.includes('vote.category')) {
+                return "url(assets/images/" + $rootScope.design.image + ")";
+            } else {
+                return "url(assets/images/rideau.jpg)";
+            }
         };
     }
 
@@ -89,5 +92,19 @@
                 }
             });
         };
+    }
+
+    /** @ngInject */
+    function VoteResultsController(Student, Category, Video, Vote, categories, $localStorage, $window, $rootScope, $log) {
+        var vm = this;
+
+        vm.categories = categories;
+        _.forEach(vm.categories, function(c) {
+            _.forEach(c.videos, function(v) {
+                v.total = v.votes.length;
+            });
+        });
+        
+        $log.debug(categories[0].videos);
     }
 })();
