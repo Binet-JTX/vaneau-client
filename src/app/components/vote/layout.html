@@ -9,6 +9,7 @@
                     <a ng-href="{{ voteLo.frankiz_url }}" class="text-uppercase"><strong>Connexion</strong></a>
                 </p>
                 <p ng-show="voteLo.loggedIn">
+                    <span class="light-font">{{ voteLo.student.firstname }} {{ voteLo.student.lastname }}</span><br />
                     <a href="" ng-click="voteLo.logout()" class="text-uppercase"><strong>Déconnexion</strong></a>
                 </p>
             </div>
