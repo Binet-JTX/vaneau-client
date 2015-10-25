@@ -6,7 +6,7 @@
         .controller('MainController', MainController);
 
     /** @ngInject */
-    function MainController(DS, Student, $location, $localStorage, $window, $state, $log) {
+    function MainController(DS, Student, Vote, $location, $localStorage, $window, $state, $log) {
         var vm = this;
 
         // Authentification
