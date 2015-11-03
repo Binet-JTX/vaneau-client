@@ -27,7 +27,7 @@
                     controllerAs: 'voteHm'
                 })
                 .state('vote.results', {
-                    url: '/results',
+                    url: '/grouze',
                     templateUrl: 'app/components/vote/results.html',
                     controller: 'VoteResultsController',
                     controllerAs: 'voteRes'
