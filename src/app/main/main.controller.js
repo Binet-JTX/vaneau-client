@@ -15,13 +15,15 @@
             return vm.loggedIn;
         };
 
+        var page = '/binet-jtx.com/'.test(window.location.hostname) ? 'http://binet-jtx.com/vaneau/' : 'http://jtx/vaneau/';
+
         var get_params = window.location.search;
         if (get_params != "") {
             $localStorage.fkz_suffix = get_params;
         }
-        
+
         if (angular.isDefined($localStorage.fkz_suffix)) {
-            Student.frankiz_auth_check({suffix: $localStorage.fkz_suffix, bypassCache: true}).then(function(response) {
+            Student.frankiz_auth_check({data: {'page': page}, suffix: $localStorage.fkz_suffix, bypassCache: true}).then(function(response) {
                 if (response.data.valid) {
                     DS.ejectAll('student');
                     Student.inject(response.data.student);
@@ -37,7 +39,7 @@
             DS.ejectAll('student');
         }
 
-        Student.frankiz_url({bypassCache: true}).then(function(l) {
+        Student.frankiz_url({data: {'page': page}, bypassCache: true}).then(function(l) {
             vm.frankiz_url = l.data;
         });
 

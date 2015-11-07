@@ -13,7 +13,9 @@
         var vm = this;
 
         // Authentification
-        Student.frankiz_url({bypassCache: true}).then(function(l) {
+        var page = '/binet-jtx.com/'.test(window.location.hostname) ? 'http://binet-jtx.com/vaneau/' : 'http://jtx/vaneau/',
+        
+        Student.frankiz_url({data: {'page': page}, bypassCache: true}).then(function(l) {
             vm.frankiz_url = l.data;
         });
 
@@ -25,7 +27,7 @@
         }
 
         if (angular.isDefined($localStorage.fkz_suffix)) {
-            Student.frankiz_auth_check({suffix: $localStorage.fkz_suffix, bypassCache: true}).then(function(response) {
+            Student.frankiz_auth_check({data: {'page': page}, suffix: $localStorage.fkz_suffix, bypassCache: true}).then(function(response) {
                 if (response.data.valid) {
                     DS.ejectAll('student');
                     Student.inject(response.data.student);
@@ -75,7 +77,7 @@
         vm.category = category;
 
         $rootScope.design.image = category.background;
-        
+
         vm.addVote = function(cat_id, video_id, student_id) {
             Vote.create({
                 student: student_id,
