@@ -46,7 +46,7 @@
             delete $localStorage.fkz_suffix;
             DS.ejectAll('student');
             vm.loggedIn = false;
-            $window.location.href = 'http://localhost:3000/';
+            $window.location.href = 'http://binet-jtx.com/';
         };
 
         vm.categories = categories;

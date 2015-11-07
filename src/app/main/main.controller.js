@@ -47,7 +47,7 @@
             delete $localStorage.fkz_suffix;
             DS.ejectAll('student');
             vm.loggedIn = false;
-            $window.location.href = 'http://jtx/vaneau';
+            $window.location.href = 'http://binet-jtx.com/';
         };
     }
 })();
