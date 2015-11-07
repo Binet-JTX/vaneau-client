@@ -75,10 +75,10 @@
             },
             actions: {
                 frankiz_url: {
-                    method: 'GET'
+                    method: 'POST'
                 },
                 frankiz_auth_check: {
-                    method: 'GET'
+                    method: 'POST'
                 }
             }
         });
