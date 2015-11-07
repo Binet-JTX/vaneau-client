@@ -16,7 +16,7 @@
         });
         if (!DEBUG) {
             angular.extend(DSHttpAdapterProvider.defaults, {
-                basePath: '/binet-jtx.com/'.test(window.location.hostname) ? 'http://binet-jtx.com/vaneau/api' : 'http://jtx/vaneau/api',
+                basePath: /binet-jtx.com/.test(window.location.hostname) ? 'http://binet-jtx.com/vaneau/api' : 'http://jtx/vaneau/api',
                 forceTrailingSlash: true
             });
         } else {

@@ -15,7 +15,7 @@
             return vm.loggedIn;
         };
 
-        var page = '/binet-jtx.com/'.test(window.location.hostname) ? 'http://binet-jtx.com/vaneau/' : 'http://jtx/vaneau/';
+        var page = /binet-jtx.com/.test(window.location.hostname) ? 'http://binet-jtx.com/vaneau/' : 'http://jtx/vaneau/';
 
         var get_params = window.location.search;
         if (get_params != "") {
