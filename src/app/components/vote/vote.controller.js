@@ -13,8 +13,8 @@
         var vm = this;
 
         // Authentification
-        var page = '/binet-jtx.com/'.test(window.location.hostname) ? 'http://binet-jtx.com/vaneau/' : 'http://jtx/vaneau/',
-        
+        var page = '/binet-jtx.com/'.test(window.location.hostname) ? 'http://binet-jtx.com/vaneau/' : 'http://jtx/vaneau/';
+
         Student.frankiz_url({data: {'page': page}, bypassCache: true}).then(function(l) {
             vm.frankiz_url = l.data;
         });
@@ -110,7 +110,7 @@
         Student.findAll().then(function(s) {
             vm.count_students = s.length;
         })
-        
+
         $log.debug(categories[0].videos);
     }
 })();
