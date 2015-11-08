@@ -107,9 +107,11 @@
             });
         });
 
-        Student.findAll().then(function(s) {
-            vm.count_students = s.length;
-        })
+        Student.findAll().then(function(slist) {
+            vm.count_students = _.filter(slist, function(s) {
+                return s.votes.length > 0;
+            }).length;
+        });
 
         $log.debug(categories[0].videos);
     }
