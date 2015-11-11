@@ -49,5 +49,9 @@
             vm.loggedIn = false;
             $window.location.href = 'http://binet-jtx.com/';
         };
+
+        vm.voteOpen = function() {
+            return moment().isBefore('2015-11-12 16:00:00');
+        };
     }
 })();

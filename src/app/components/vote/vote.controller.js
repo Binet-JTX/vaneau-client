@@ -60,6 +60,10 @@
                 return "url(assets/images/rideau.jpg)";
             }
         };
+
+        vm.voteOpen = function() {
+            return moment().isBefore('2015-11-12 16:00:00');
+        };
     }
 
     /** @ngInject */
